@@ -1,0 +1,521 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 7, 2022, 3:47:05 PM
+    Author     : Admin
+*/
+
+body {
+    font: 11pt Arial, Helvetica, sans-serif; /* Рубленый шрифт текста */
+    margin: 0; /* Отступы на странице */
+    background-color: #F6F9FD;
+}
+h1 {
+    font-size: 36px; /* Размер шрифта */
+    margin: 0; /* Убираем отступы */
+    color: #fc6; /* Цвет текста */
+}
+h2 {
+    margin-top: 0; /* Убираем отступ сверху */
+}
+#header { /* Верхний блок */
+    background: #4F66B8; /* Цвет фона */
+    padding: 10px; /* Поля вокруг текста */
+    margin: 10px;
+    height: 140px;
+}
+#sidebar { /* Левая колонка */
+    float: left; /* Обтекание справа */
+    border: 1px solid #333; /* Параметры рамки вокруг */
+    width: 20%; /* Ширина колонки */
+    padding: 5px; /* Поля вокруг текста */
+    margin: 10px 10px 20px 5px; /* Значения отступов */
+    height: 70%;
+    overflow:  scroll; /*visible*/
+}
+#content { /* Правая колонка */
+    margin: 10px 5px 20px 25%; /* Значения отступов */
+    padding: 5px; /* Поля вокруг текста */
+    /* border: 1px solid #333; /* Параметры рамки */
+    height: 70%;
+    overflow-y: scroll;
+}
+#footer { /* Нижний блок */
+    background: #333; /* Цвет фона */
+    padding: 5px; /* Поля вокруг текста */
+    color: #fff; /* Цвет текста */
+    clear: left; /* Отменяем действие float */
+}
+.button{
+    background:  #FFDEAD;
+    border-radius: 5px;
+}
+div.folders {
+    color: #333333;
+    border: 1px solid #c6e1ec;
+    margin-top: 15px;
+}   
+p.folders-title {
+    background: #0590C7;
+    border-bottom: 2px solid #c6e1ec;
+    color: #FFFFFF;
+    display: block;
+    font-size: 93%;
+    font-weight: bold;
+    margin: 1px;
+    padding: 2px 10px;
+}
+.button_email, .button_contacts, .button_email_new{
+    width: 80px;
+    height: 70px;
+    float: left;
+    border: solid;
+    border-width: 2px;
+    padding: 5px;
+    margin:2px;       
+    margin-top: 42px;
+    text-align: center;
+    color: white;
+}
+.button_email{
+    background: url(/images/convert.png) 50% 90% no-repeat #1c449b;
+    background-size: 45% 40%;        
+}
+.button_contacts{
+    background: url(/images/contacts.png) 50% 90% no-repeat #1c449b;
+    background-size: 45% 40%;
+}
+.button_email_new{
+    background: url(/images/email_new.png) 50% 90% no-repeat #1c449b;
+    background-size: 45% 40%;
+}
+.button_email.active, .button_contacts.active, .button_email_new.active {
+    width: 80px;
+    height: 70px;
+    float: left;
+    border: solid;
+    border-width: 2px;   
+    padding: 5px;
+    margin:2px;
+    margin-top: 42px;
+    text-align: center;
+    color: black;
+} 
+.button_email.active{
+    background: url(/images/convert_active.png) 50% 90% no-repeat #ffffff;
+    background-size: 45% 40%;
+}
+.button_contacts.active{
+    background: url(/images/contacts_active.png) 50% 90% no-repeat #ffffff;
+    background-size: 45% 40%;
+}
+.button_email_new.active{
+    background: url(/images/email_new_active.png) 50% 90% no-repeat #ffffff;
+    background-size: 45% 40%;
+}
+
+.login_form {
+    height: 120px;
+    width: 300px;
+    float: right;
+    /*border: solid;
+    border-width: 1px;*/
+    padding: 5px;
+    margin: 2px;
+    background: 	#87CEFA; 
+    background-size: 45% 40%;
+    text-align: center;
+    font-weight: bold;
+    color: #00008B;
+    border-radius: 5px;
+}
+.LoginError
+{
+    color: white;
+    margin: 0px 0px 3px 0px;
+    background: #dc143c;
+}
+.welcome_to_my_post
+{
+    height: 58px;
+    color: #191970;
+    font-weight: bold;
+    margin: 0px 0px 3px 0px;
+    background: #FFDEAD;
+    border-radius: 5px;
+}
+div.image_back
+{
+    background: #FFD700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+div.image_back img
+{       
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* https://ilyakhasanov.ru/baza-znanij/css-html-javascript/
+magiya-css-stilej/127-drevovidnye-spiski-raznykh-variatsij */
+.treeline, .treeline ul, .treeline li {
+    margin: 0; padding: 2px 10px; line-height: 1.2; list-style: none;
+}
+.treeline ul {margin: 0 0 0 15px; /* отступ вертикальной линии */}
+.treeline > li:not(:only-child), .treeline li li {
+    position: relative;
+    padding: 3px 0 0 20px; /* отступ текста */
+}
+/* Стиль вертикальной линии */
+.treeline li:not(:last-child) { border-left: 1px solid #ccc;}
+/* Стили горизонтальной линии*/  
+.treeline li li:before, .treeline > li:not(:only-child):before {
+    content: ""; position: absolute; top: 0; left: 0;
+    width: 1.1em; height: .7em; border-bottom:1px solid #ccc;
+}
+/* Вертикальная линия последнего пункта в списка */  
+.treeline li:last-child:before {
+    width: calc(1.1em - 1px); border-left: 1px solid #ccc;
+}
+.treeline li .selected
+{
+    font-weight: bolder;
+    width: 100%;
+    background: powderblue;
+}
+
+/*https://webref.ru/layout/pseudo-class-hover/tooltip */
+[data-tooltip] {
+    position: relative; /* Относительное позиционирование */ 
+}
+[data-tooltip]::after {
+    content: attr(data-tooltip); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    width: 12em; /* Ширина подсказки */
+    overflow-wrap: anywhere;
+    left: 0; top: 0; /* Положение подсказки */
+    background: #3989c9; /* Синий цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 0.5em; /* Поля вокруг текста */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 1); /* Параметры тени */
+    pointer-events: none; /* Подсказка */
+    opacity: 0; /* Подсказка невидима */
+    transition: 1s; /* Время появления подсказки */
+    border-left: 8px solid #FFD700; /* рамка слева */
+    border-radius: 5px; /* скругленные края блока */
+    /*color:#fff!important;*/
+    text-shadow:  1px 0 1px #000, /* контур вокруг текста*/
+        0 1px 1px #000, 
+        -1px 0 1px #000, 
+        0 -1px 1px #000;
+    z-index: 10;
+} 
+[data-tooltip]:hover::after {
+    opacity: 1; /* Показываем подсказку */
+    left:2em; top: 1em; /* Положение подсказки */
+}
+.message_table 
+{
+
+}
+.message_table thead
+{
+    height: 2em;
+    color: white;
+    background: #1c449b;
+}
+.message_table td 
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid;
+    border-color: black;
+}
+.message_table thead td:first-child
+{
+    width: 200px;
+}
+.message_table thead td:nth-child(2)
+{
+    width: 50%;
+}
+.message_table tbody tr
+{
+    border-collapse: collapse;
+    height: 2.2em;
+}
+.message_table tbody tr:nth-child(odd)
+{
+    background-color:#c6e1ec;
+}
+.message
+{
+    height: 70%;
+    width: 98%;
+}
+.message_subject
+{
+    padding-left: 2em;
+    border: 1px solid #87CEFA;
+    font-size: 18pt;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: white;
+}
+.message_text
+{
+    background: white;
+    height: 95%;
+    padding-left: 1em;
+    font-size: 16pt;
+    border: 1px solid #87CEFA;
+    border-radius: 5px;
+}
+.message_button
+{
+    margin-bottom: 10px;
+}
+.create_folder form input
+{
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    padding-left:30px;
+    -moz-transition: padding .25s; 
+    -webkit-transition: padding .25s; 
+    -o-transition: padding .25s;
+    transition: padding .25s;
+    padding:5px 8px;
+}
+.create_folder form input.cfi:focus {
+    background: #fff; 
+    border:1px solid #555; 
+    box-shadow: 0 0 3px #aaa; 
+    padding-right:70px;
+}
+.create_folder span
+{
+    color: red;    
+    font: 1.1em ;
+}
+
+.contacts li
+{
+margin-bottom: 10px;
+}
+.contacts li.active
+{
+    background: #c8ff67; /*greenyellow;*/
+}
+.contacts li:first-child 
+{
+    margin-top: 0px;
+}
+.contacts li .contact_link 
+{
+    /*color: #dc143c;*/
+    padding-left: 0px;
+    display:block;
+}
+.contacts li:first-child .contact_link .contact_name,
+.contacts li:first-child .contact_link .contact_unavailable
+{   
+    color: #505260;
+    margin-top: 0px;
+    border-top: none;
+    padding-top: 0px;
+}
+.contacts li .contact_link .contact_name,
+.contacts li .contact_link .contact_unavailable
+{
+    color: #505260;
+    margin-top: 0px;
+    padding-left: 0px;
+    /*padding-bottom: 12px;*/
+    /*border-top: solid 1px #00008B;*/
+}
+.contacts li .contact_link .contact_name
+{
+    /*background: #e5e5e5;*/
+}
+.contacts li .contact_link .contact_unavailable
+{
+    font-style: italic;
+    /*background: #f0c040;*/
+}
+.contacts_none, .folder_empty
+{
+    background: #c6e1ec;/* url(/images/mypost_addressbook.png);*/
+    /*background-size: contain;*/
+    height: 100%;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    transition-property: box-shadow, background-color, color, letter-spacing;
+    transition-duration: 1s; 
+}
+.contacts_none:hover, .folder_empty:hover
+{
+    box-shadow: inset 0 0 0 30px lightskyblue;
+    background-color: lightcyan;
+    color: darkblue;
+    letter-spacing: 20px; 
+}
+.contacts_none p, .folder_empty p
+{
+    font-size: 5em;
+    margin: 0 auto;
+    text-shadow: 1px 2px 4px rgba(0,255,255,0.7);
+}
+/* https://webdesign.tutsplus.com/tutorials/bring-your-forms-up-to-date-with-css3-and-html5-validation--webdesign-4738
+*/
+.email_form
+{
+    
+}
+.contact_form ul, .email_form ul {
+    width:800px;
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+.contact_form ul h2, .email_form ul h2{
+    font-size: 1.5em;
+    margin:0;
+    display: inline;
+}
+.contact_form ul h2 span
+{
+    font-style: italic;
+    color: #a82020;
+}
+.required_notification {
+    color:#d45252; 
+    margin:20px 0 0 0; 
+    display:inline;
+    float:right;
+}
+.contact_form li, .email_form li, .contacts li{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    position:relative;
+}
+.contact_form label, .email_form label {
+    width:150px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+.email_form input[name="email_to"]
+{
+    width: 20em;
+}
+.email_form input[name="email_subject"], .email_form textarea[name="email_message"]
+{
+    width: 35em;
+}
+.contact_form input, .email_form input, .contacts li {
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    padding-right:30px;
+    -moz-transition: padding .25s; 
+    -webkit-transition: padding .25s; 
+    -o-transition: padding .25s;
+    transition: padding .25s;
+    padding:5px 8px;
+}
+.email_form textarea {padding:8px; width:70%; }
+.contact_form input:focus, .email_form input:focus {
+    background: #fff; 
+    border:1px solid #555; 
+    box-shadow: 0 0 3px #aaa; 
+    padding-right:70px;
+}
+.contact_form button, .email_form button {
+    margin-left:156px;
+}
+.contact_form li:first-child,.email_form li:first-child, 
+.contact_form li:last-child, .email_form li:last-child 
+{
+    border-bottom:1px solid #777;
+}
+.contact_form input:required, .email_form input:required
+{
+    background: #fff url(/images/red_asterisk.png) no-repeat 98% center;
+}
+.email_form textArea:required
+{
+    background: #fff url(/images/red_asterisk.png) no-repeat 98% top;
+}
+.contact_form input:required:valid, .email_form input:required:valid
+{
+    background: #fff url(/images/valid.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+.contact_form input:focus:invalid, .email_form input:focus:invalid{
+    background: #fff url(/images/invalid.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535
+}
+/* === Form hints === */
+.form_hint {
+    background: #d45252;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    margin-left:8px;
+    padding: 1px 6px;
+    z-index: 999; /* hints stay above all other elements */
+    position: absolute; /* allows proper formatting if hint is two lines */
+    display: none;
+}
+.form_hint::before {
+    content: "\25C0";
+    color:#d45252;
+    position: absolute;
+    top:1px;
+    left:-6px;
+}
+.contact_form input:focus + .form_hint, .email_form input:focus + .form_hint 
+{display: inline;}
+.contact_form input:required:valid + .form_hint, .email_form input:required:valid + .form_hint 
+{background: #28921f;}
+.contact_form input:required:valid + .form_hint::before,
+.email_form input:required:valid + .form_hint::before
+{color:#28921f;}
+/* === Button Style === */
+button.submit, button.email_submit 
+{
+    color: #6a6a6a;
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    padding-left:30px;    
+    padding:6px 20px;
+    font-weight: bold;
+}
+button.submit:hover, button.email_submit:hover 
+{
+    color: #303030;
+    opacity:.85;
+    cursor: pointer; 
+}
+button.submit:active, button.email_submit:active 
+{
+    border: 1px solid #323232;
+    box-shadow: 0 0 10px 5px #c0c0c0 inset; 
+    -webkit-box-shadow:0 0 10px 5px #c0c0c0 inset ;
+    -moz-box-shadow: 0 0 10px 5px #c0c0c0 inset;
+    -ms-box-shadow: 0 0 10px 5px #c0c0c0 inset;
+    -o-box-shadow: 0 0 10px 5px #c0c0c0 inset;	
+}

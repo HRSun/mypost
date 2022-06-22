@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 7, 2022, 2:08:49 PM
+    Author     : Admin
+*/
+
+
+
+.angry-grid {
+   display: grid; 
+
+   grid-template-rows: 10% 10% 10%;
+   grid-template-columns: 10% 10% 10% 10% 10%;
+   
+   gap: 0px;
+   height: 100%;
+
+   
+}
+  
+#item-0 {
+
+   background-color: #B7FAEB; 
+   grid-row-start: 1;
+   grid-column-start: 1;
+
+   grid-row-end: 2;
+   grid-column-end: 2;
+   
+}
+#item-1 {
+
+   background-color: #55DB8E; 
+   grid-row-start: 1;
+   grid-column-start: 2;
+
+   grid-row-end: 2;
+   grid-column-end: 3;
+   
+}
+#item-2 {
+
+   background-color: #9B58AD; 
+   grid-row-start: 1;
+   grid-column-start: 3;
+
+   grid-row-end: 2;
+   grid-column-end: 4;
+   
+}
+#item-3 {
+
+   background-color: #BBBDCD; 
+   grid-row-start: 1;
+   grid-column-start: 4;
+
+   grid-row-end: 2;
+   grid-column-end: 5;
+   
+}
+#item-4 {
+
+   background-color: #F8995C; 
+   grid-row-start: 1;
+   grid-column-start: 5;
+
+   grid-row-end: 2;
+   grid-column-end: 6;
+   
+}
+#item-5 {
+
+   background-color: #957A68; 
+   grid-row-start: 2;
+   grid-column-start: 1;
+
+   grid-row-end: 4;
+   grid-column-end: 2;
+   
+}
+#item-6 {
+
+   background-color: #6D6755; 
+   grid-row-start: 2;
+   grid-column-start: 2;
+
+   grid-row-end: 4;
+   grid-column-end: 6;
+   
+}
+
+

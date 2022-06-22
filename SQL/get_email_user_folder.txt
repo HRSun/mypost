@@ -1,0 +1,10 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_email_user_folder`(IN `email_user` VARCHAR(255))
+select `hm_messages`.`messagefilename`, `hm_messages`.`messagefrom`, `hm_messages`.`messagecreatetime`,
+`hm_messages`.`messagesize`, `contacts`.`folder_name`, `contacts`.`contact_id`
+from `hm_messages` 
+inner join `hm_accounts` on `hm_messages`.`messageaccountid`=`hm_accounts`.`accountid`
+left join `contacts` on `hm_messages`.`messagefrom`=`contacts`.`contact_email` and `hm_accounts`.`accountid`=`contacts`.`account_id`
+where `hm_accounts`.`accountaddress`=email_user
+order by `hm_messages`.`messagecreatetime`$$
+DELIMITER ;

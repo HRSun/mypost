@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_folder_name_if_exist`(IN `account_id` BIGINT, IN `folder_name` VARCHAR(255))
+SELECT `contacts`.`folder_name`, `contacts`.`contact_email`
+FROM `contacts`
+WHERE `contacts`.`account_id`=account_id AND `contacts`.`folder_name`=folder_name$$
+DELIMITER ;

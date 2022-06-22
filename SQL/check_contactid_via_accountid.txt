@@ -1,0 +1,7 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `check_contactid_via_accountid`(IN `account_id` INT, IN `contact_id` INT)
+SELECT `contacts`.`contact_id`
+FROM `contacts`
+WHERE `contacts`.`account_id`=account_id 
+AND `contacts`.`contact_id`=contact_id$$
+DELIMITER ;

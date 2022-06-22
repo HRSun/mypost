@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_contact_info`(IN `c_id` INT, IN `c_name` VARCHAR(255), IN `c_email` VARCHAR(255), IN `c_folder` VARCHAR(255))
+UPDATE `contacts`
+SET `contacts`.`contact_name`=c_name, `contacts`.`contact_email`=c_email, `contacts`.`folder_name`=c_folder
+WHERE `contacts`.`contact_id`=c_id$$
+DELIMITER ;

@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_accountid_via_user_email`(IN `user_email` VARCHAR(255))
+SELECT `hm_accounts`.`accountid`
+FROM `hm_accounts`
+WHERE `hm_accounts`.`accountaddress`=user_email$$
+DELIMITER ;

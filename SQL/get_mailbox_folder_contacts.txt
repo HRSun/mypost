@@ -1,0 +1,9 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_mailbox_folder_contacts`(IN `user_email` VARCHAR(255))
+SELECT `contacts`.`contact_id`, `contacts`.`folder_name`, `contacts`.`contact_email`, `contacts`.`contact_name`
+FROM `contacts`
+INNER JOIN `hm_accounts`
+ON `contacts`.`account_id`=`hm_accounts`.`accountid`
+WHERE `hm_accounts`.`accountaddress`=user_email
+order by `contacts`.`folder_name`$$
+DELIMITER ;

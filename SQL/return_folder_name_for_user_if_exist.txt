@@ -1,0 +1,11 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `return_folder_name_for_user_if_exist`(IN `folder_name` VARCHAR(255), IN `user_email` VARCHAR(255))
+SELECT `contacts`.`contact_id`, `contacts`.`folder_name`, `contacts`.`contact_email`, `contacts`.`contact_name`,
+(SELECT `hm_accounts`.`accountid` 
+FROM `hm_accounts`
+WHERE `hm_accounts`.`accountaddress`=user_email) AS em1
+FROM `contacts`
+INNER JOIN `hm_accounts`
+ON `contacts`.`account_id`=`hm_accounts`.`accountid`
+WHERE `contacts`.`folder_name`=folder_name$$
+DELIMITER ;

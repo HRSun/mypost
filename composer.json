@@ -1,0 +1,18 @@
+{
+    "name": "admin/mypost",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Admin\\Mypost\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HRSun",
+            "email": "ghisler@email.com"
+        }
+    ],
+    "require": {
+        "php-mime-mail-parser/php-mime-mail-parser": "^7.1"
+    }
+}

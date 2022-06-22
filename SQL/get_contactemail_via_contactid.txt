@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_contactemail_via_contactid`(IN `contact_id` INT)
+SELECT `contacts`.`contact_email`
+FROM `contacts`
+WHERE `contacts`.`contact_id`=contact_id$$
+DELIMITER ;

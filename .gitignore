@@ -1,0 +1,14 @@
+/mail
+/log
+/testing
+/vendor
+/src
+/hmail
+/Apache24
+/sendmail
+/PHP
+/nbproject
+*.rar
+*.html
+hmailserver.php
+

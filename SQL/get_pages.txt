@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_pages`()
+BEGIN
+SELECT page_id, page_name, page_class, page_template FROM pages ORDER BY page_id;
+END$$
+DELIMITER ;

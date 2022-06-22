@@ -1,0 +1,8 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mailuser_get_login_info`(IN `inEmail` VARCHAR(255))
+BEGIN
+SELECT hm_accounts.accountid, hm_accounts.accountpassword
+FROM hm_accounts
+WHERE hm_accounts.accountaddress=inEmail;
+END$$
+DELIMITER ;

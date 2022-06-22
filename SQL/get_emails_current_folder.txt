@@ -1,0 +1,7 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_emails_current_folder`(IN `account_id` INT, IN `contact_email` VARCHAR(255))
+SELECT `hm_messages`.`messagefilename`, `hm_messages`.`messagefrom`,
+`hm_messages`.`messagesize`, `hm_messages`.`messagecreatetime`
+FROM `hm_messages`
+WHERE `hm_messages`.`messageaccountid`=account_id AND `hm_messages`.`messagefrom`=contact_email$$
+DELIMITER ;

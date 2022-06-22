@@ -1,0 +1,9 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_contact_id_via_email`(IN `user_email` VARCHAR(255))
+SELECT `contacts`.`account_id`
+FROM `contacts`
+INNER JOIN `hm_accounts`
+ON `contacts`.`account_id`=`hm_accounts`.`accountid`
+WHERE `hm_accounts`.`accountaddress`=user_email
+LIMIT 1$$
+DELIMITER ;

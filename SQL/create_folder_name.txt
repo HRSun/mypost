@@ -1,0 +1,5 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `create_folder_name`(IN `account_id` INT, IN `user_email` VARCHAR(255), IN `folder_name` VARCHAR(255))
+INSERT INTO `contacts` (`contacts`.`account_id`, `contacts`.`contact_email`, `contacts`.`folder_name`, `contacts`.`contact_name`)
+VALUES (account_id, user_email, folder_name, folder_name)$$
+DELIMITER ;

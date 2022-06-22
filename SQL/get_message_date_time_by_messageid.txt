@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_message_date_time_by_messageid`(IN `message_id` VARCHAR(255))
+SELECT hm_messages.messagecreatetime
+FROM hm_messages
+WHERE hm_messages.messagefilename=message_id$$
+DELIMITER ;

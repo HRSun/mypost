@@ -1,0 +1,75 @@
+<?php
+/* Smarty version 4.1.0, created on 2022-05-14 07:14:37
+  from 'M:\www\mypost\presentation\templates\mail_front.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.1.0',
+  'unifunc' => 'content_627f2cad183671_43979054',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e20c4eb42ea2e6acedb6146b58cea53658b022ad' => 
+    array (
+      0 => 'M:\\www\\mypost\\presentation\\templates\\mail_front.tpl',
+      1 => 1652501673,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:mailbox_list.tpl' => 1,
+  ),
+),false)) {
+function content_627f2cad183671_43979054 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'M:\\www\\mypost\\presentation\\smarty_plugins\\function.load_presentation_object.php','function'=>'smarty_function_load_presentation_object',),));
+echo smarty_function_load_presentation_object(array('filename'=>"mail_front",'classname'=>"mailfront",'assign'=>"obj"),$_smarty_tpl);?>
+
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="styles/styles.css" />
+    </head>
+    <body>
+        <div id="header">
+            <?php
+$__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['obj']->value->mPageId) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_0_total = $__section_i_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if ($__section_i_0_total !== 0) {
+for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+?>
+                <?php $_smarty_tpl->_assignInScope('selected', '');?>
+                <p><?php echo $_smarty_tpl->tpl_vars['obj']->value->mPageId[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['page_id'];?>
+</p>
+            <a href=""><div class="button_email_active">Почта</div></a>
+            <a href=""><div class="button_contacts">Контакты</div></a>
+            <a href=""><div class="button_email_new">Новое письмо</div></a>
+            <?php
+}
+}
+?>
+        </div>
+        
+        <div id="sidebar">
+            <?php $_smarty_tpl->_subTemplateRender("file:mailbox_list.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>    
+        </div>
+        <div id="content">
+            <h2>Алтарь демона </h2>
+            <p>Утром, при ярком солнечном свете, всё выглядело совсем не так и мрачно, как 
+                планировалось, а даже наоборот. От свечей остались одни потёки, «кровь» 
+                смотрелась как краска, а перья почти целиком разлетелись от ветра. Хорошо 
+                сохранились только рисунки мелом, но и они были скорее прикольные, чем злые и загадочные. 
+                Дети с неподдельным интересом разглядывали изображения, но без тени тех чувств, которые 
+                испытали взрослые ночью при луне.</p>
+            <p>Тем не менее, оказался один человек, на которого работа произвела большое 
+                впечатление, — сторож лагеря. Днём он подошёл к автору «алтаря».</p>
+            <p>— Ваша работа? - начал сторож, кивая в сторону площади.<br />
+                — А что такое? <br />
+                — Ну, как же... Тут кровь..., перья птицы мёртвой..., знаки какие-то страшные нарисованы..., 
+                а у вас всё же дети маленькие, они испугаться могут...</p>
+        </div>
+        <div id="footer">&copy; MyPost Email Service</div>
+    </body>
+</html><?php }
+}

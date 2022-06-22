@@ -1,0 +1,7 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_all_email_user`(IN `user_email` VARCHAR(255))
+select `hm_messages`.`messagefilename`, `hm_messages`.`messagefrom`, `hm_messages`.`messagecreatetime`
+from `hm_messages` 
+inner join `hm_accounts` on `hm_messages`.`messageaccountid`=`hm_accounts`.`accountid` 
+where `hm_accounts`.`accountaddress`=user_email$$
+DELIMITER ;

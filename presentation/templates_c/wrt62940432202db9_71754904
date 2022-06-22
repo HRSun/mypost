@@ -1,0 +1,77 @@
+<?php
+/* Smarty version 4.1.0, created on 2022-05-30 02:39:30
+  from 'M:\www\mypost\presentation\templates\contact_list_selected.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.1.0',
+  'unifunc' => 'content_629404321dbcb3_59633495',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '03e463e577b2e454c0c65b72ddc933b2a1e9c3be' => 
+    array (
+      0 => 'M:\\www\\mypost\\presentation\\templates\\contact_list_selected.tpl',
+      1 => 1653867565,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_629404321dbcb3_59633495 (Smarty_Internal_Template $_smarty_tpl) {
+if ($_smarty_tpl->tpl_vars['obj']->value->mUpdateContactInfo) {?>
+    <p>Contact updated</p>
+<?php }?>
+<form class="contact_form" action="" method="POST">
+
+    <ul>
+        <li>
+            <h2>Адресная книга</h2>
+            <span class="required_notification">* Поля, обязательные к заполнению</span>
+        </li>
+
+        <li>
+            <label for="contact_name">Name:</label>
+            <input autocomplete="contact_name" name="contact_name" type="text" 
+                   value="<?php echo $_smarty_tpl->tpl_vars['obj']->value->mContactBrief[$_GET['ContactId']]['contact_name'];?>
+"
+                   placeholder="Enter name here">
+        </li>
+
+        <!-- 
+        <p>
+            <label for="contact_lastname">Last Name:</label>
+            <input name="contact_lastname" type="text">
+        </p>
+        -->
+        <li>
+            <label for="contact_email">Email:</label>
+            <input name="contact_email" type="email"
+                   value="<?php echo $_smarty_tpl->tpl_vars['obj']->value->mContactBrief[$_GET['ContactId']]['contact_email'];?>
+"
+                   placeholder="Enter email here" required>
+            <span class="form_hint">Proper format: "your_name@email.com"</span>
+            <span><?php echo $_smarty_tpl->tpl_vars['obj']->value->mContactEmailError;?>
+</span>
+        </li>
+
+        <li>
+            <label for="contact_folder">Folder name:</label>
+            <input name="contact_foldername" type="text"
+                   value="<?php echo $_smarty_tpl->tpl_vars['obj']->value->mContactBrief[$_GET['ContactId']]['folder_name'];?>
+"
+                   placeholder="Enter folder name here" required>
+            <span class="form_hint">Proper format: "Some text"</span>
+            <span ><?php echo $_smarty_tpl->tpl_vars['obj']->value->mContactFolderError;?>
+</span>
+        </li>
+        <li>
+            <button class="submit" type="submit" name="update_contact" value="Send">Send</button>
+        </li>    
+    </ul>
+
+</form>
+<?php }
+}
