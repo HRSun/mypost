@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-06-02 01:48:42
+/* Smarty version 4.1.0, created on 2022-06-26 12:09:05
   from 'M:\www\mypost\presentation\templates\mail_front.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6297ecca58ec40_12939501',
+  'unifunc' => 'content_62b822310989d6_09210442',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e20c4eb42ea2e6acedb6146b58cea53658b022ad' => 
     array (
       0 => 'M:\\www\\mypost\\presentation\\templates\\mail_front.tpl',
-      1 => 1654123716,
+      1 => 1656234542,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6297ecca58ec40_12939501 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62b822310989d6_09210442 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'M:\\www\\mypost\\presentation\\smarty_plugins\\function.load_presentation_object.php','function'=>'smarty_function_load_presentation_object',),));
 echo smarty_function_load_presentation_object(array('filename'=>"mail_front",'classname'=>"mailfront",'assign'=>"obj"),$_smarty_tpl);?>
 
@@ -174,10 +174,18 @@ $_smarty_tpl->_subTemplateRender($_prefixVariable1, $_smarty_tpl->cache_id, $_sm
         <?php }?>
         
         <?php if (!$_SESSION['auth_id']) {?>
+            <?php if ($_smarty_tpl->tpl_vars['obj']->value->mBackground == "webm") {?>
+                <div class="video_back">
+                    <video width="1200" height="600" autoplay="autoplay" loop="loop">
+                        <source src="images/back_logoff/RobShields-cyberpunk-neon-daemons.webm" type='video/webm; codecs="vp8, vorbis"'>
+                    </video>
+                </div>
+            <?php } else { ?>
             <div class="image_back">
-                <img width="1200" height="600" src="images/back_logoff/back_logoff<?php echo $_smarty_tpl->tpl_vars['obj']->value->mBackground;?>
-.jpg">
+                <img  src="<?php echo $_smarty_tpl->tpl_vars['obj']->value->mBackground;?>
+">
             </div>
+            <?php }?>            
         <?php }?>
         <div id="footer">&copy; MyPost Email Service</div>
         <?php echo '<script'; ?>

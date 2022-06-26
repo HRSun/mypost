@@ -147,19 +147,21 @@ p.folders-title {
     background: #FFDEAD;
     border-radius: 5px;
 }
-div.image_back
+div.image_back , div.video_back
 {
     background: #FFD700;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 10px;    
 }
-div.image_back img
+div.image_back img, div.video_back video
 {       
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-width: 1200px;
+    max-height: 600px;
 }
 /* https://ilyakhasanov.ru/baza-znanij/css-html-javascript/
 magiya-css-stilej/127-drevovidnye-spiski-raznykh-variatsij */

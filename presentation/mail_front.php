@@ -149,7 +149,15 @@ class MailFront {
             $this->mLogged=$_SESSION['auth_id'];
         }
         
-        $this->mBackground= rand(1, 6);
+        
+        //background image/video when logoff
+        $image_array=array();
+        $path="images/back_logoff/";
+        foreach (glob($path."*.{jpg,png,gif,webm}", GLOB_BRACE) as $filename)
+                $image_array[]=$filename;        
+        
+        $max_rand=count($image_array);
+        $this->mBackground = (($rand=rand(1, $max_rand))!==$max_rand) ? $image_array[$rand-1] : "webm";
     }
 
 }

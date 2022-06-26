@@ -128,9 +128,17 @@
         {/if}
         
         {if !$smarty.session.auth_id}
+            {if $obj->mBackground eq "webm"}
+                <div class="video_back">
+                    <video width="1200" height="600" autoplay="autoplay" loop="loop">
+                        <source src="images/back_logoff/RobShields-cyberpunk-neon-daemons.webm" type='video/webm; codecs="vp8, vorbis"'>
+                    </video>
+                </div>
+            {else}
             <div class="image_back">
-                <img width="1200" height="600" src="images/back_logoff/back_logoff{$obj->mBackground}.jpg">
+                <img  src="{$obj->mBackground}">
             </div>
+            {/if}            
         {/if}
         <div id="footer">&copy; MyPost Email Service</div>
         <script src="source/jquery.min.js"></script>
